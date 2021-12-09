@@ -1,0 +1,16 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "username": "root",
+    "password": "1",
+    "database": "frexco",
+    "entities": [
+        "./src/data/entities/*.ts"
+    ],
+    "migrations": [
+        "./src/migrations/*.ts"
+    ],
+    "cli": {
+        "migrationsDir": "./src/migrations"
+    }
+}
