@@ -1,0 +1,25 @@
+{
+  "name": "desafio-frexco-estoque-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenorodriguesdev/desafio-frexco-estoque-microservice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenorodriguesdev/desafio-frexco-estoque-microservice/issues"
+  },
+  "homepage": "https://github.com/brenorodriguesdev/desafio-frexco-estoque-microservice#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}
