@@ -6,3 +6,4 @@ export default (channel: any): void => {
       (await import(`../queues/${file}`)).default(channel)
     }
   })
+}
