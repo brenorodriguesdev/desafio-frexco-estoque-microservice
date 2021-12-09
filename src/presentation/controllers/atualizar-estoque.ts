@@ -1,7 +1,7 @@
 import { AtualizarEstoqueUseCase } from "../../domain/useCases/atualizar-estoque"
 import { Validator } from "../../validation/contracts/validator"
 import { Controller } from "../contracts/controller"
-import { AMQPRequest } from "../contracts/amqp";
+import { AMQPRequest } from "../contracts/amqp"
 
 
 export class AtualizarEstoqueController implements Controller {
