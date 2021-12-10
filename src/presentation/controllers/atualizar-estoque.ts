@@ -12,9 +12,12 @@ export class AtualizarEstoqueController implements Controller {
             throw error
         }
         const { nome, id } = AMQPRequest.payload
-        await this.atualizarEstoqueUseCase.atualizar({
+        const result = await this.atualizarEstoqueUseCase.atualizar({
             id,
             nome
         })
+        if (result instanceof Error) {
+            throw result
+        }
     }
 }

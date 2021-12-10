@@ -15,6 +15,9 @@ export class CriarEstoqueController implements Controller {
         const estoque = await this.criarEstoqueUseCase.criar({
             nome
         })
+        if (estoque instanceof Error) {
+            throw estoque
+        }
         return estoque
     }
 }

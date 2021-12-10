@@ -11,6 +11,9 @@ export class DeletarEstoqueController implements Controller {
             throw error
         }
         const { id } = AMQPRequest.payload
-        await this.deletarEstoqueUseCase.deletar(id)
+        const result = await this.deletarEstoqueUseCase.deletar(id)
+        if (result instanceof Error) {
+            throw result
+        }
     }
 }
