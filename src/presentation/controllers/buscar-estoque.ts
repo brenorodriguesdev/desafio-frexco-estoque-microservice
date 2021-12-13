@@ -11,9 +11,10 @@ export class BuscarEstoqueController implements Controller {
             throw error
         }
         const { id } = AMQPRequest.payload
-        const result = await this.buscarEstoqueUseCase.buscar(id)
-        if (result instanceof Error) {
-            throw result
+        const estoque = await this.buscarEstoqueUseCase.buscar(id)
+        if (estoque instanceof Error) {
+            throw estoque
         }
+        return estoque
     }
 }
