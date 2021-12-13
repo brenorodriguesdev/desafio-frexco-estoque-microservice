@@ -1,3 +1,5 @@
+import { AdicionarProdutoEstoqueModel } from "../models/adicionar-produto-estoque";
+
 export interface AdicionarProdutoEstoqueUseCase {
-    adicionar: (id: number) => Promise<void | Error>
+    adicionar: (data: AdicionarProdutoEstoqueModel) => Promise<void | Error>
 }
