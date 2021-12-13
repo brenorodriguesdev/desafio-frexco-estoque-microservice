@@ -1,13 +1,17 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { Estoque } from './estoque'
+import { Produto } from './produto'
 
 @Entity('produtoEstoque')
 export class ProdutoEstoque {
   @PrimaryGeneratedColumn('increment')
   id?: number
 
-  @Column()
-  idProduto: number
+  @OneToOne(() => Produto)
+  @JoinColumn({ name: 'idProduto' })
+  produto: Produto
 
-  @Column()
-  idEstoque: number
+  @OneToOne(() => Estoque)
+  @JoinColumn({ name: 'idEstoque' })
+  estoque: Estoque
 }
