@@ -5,4 +5,5 @@ import { makeDeletarProdutoEstoqueController } from "../factories/controllers/de
 export default (channel: any): void => {
     channel.consume('adicionar-produtoEstoque', adaptQueue(channel, makeAdicionarProdutoEstoqueController()));
     channel.consume('deletar-produtoEstoque', adaptQueue(channel, makeDeletarProdutoEstoqueController()));
+    channel.consume('listar-produtoEstoquePorEstoque', adaptQueue(channel, makeDeletarProdutoEstoqueController()));
 }
