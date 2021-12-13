@@ -1,5 +1,5 @@
 import { EstoqueModel } from "../models/estoque";
 
-export interface BuscarProdutoUseCase {
+export interface BuscarEstoqueUseCase {
     buscar: (id: number) => Promise<EstoqueModel | Error>
 }
