@@ -5,5 +5,4 @@ export interface ProdutoEstoqueModel {
     id?: number
     produto: ProdutoModel
     estoque: EstoqueModel
-    status: number
 }
