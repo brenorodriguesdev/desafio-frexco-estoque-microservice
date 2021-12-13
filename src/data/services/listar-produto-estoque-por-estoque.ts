@@ -5,7 +5,7 @@ import { ProdutoEstoqueRepository } from "../contracts/produtoEstoque-repository
 export class ListarProdutoEstoquePorEstoqueService implements ListarProdutoEstoquePorEstoqueUseCase {
     constructor (private readonly produtoEstoqueRepository: ProdutoEstoqueRepository) {}
     async listar (idEstoque: number): Promise<ProdutoEstoqueModel[]> {
-        await this.produtoEstoqueRepository.findByEstoque(idEstoque)
-        return []
+        const produtosEstoque = await this.produtoEstoqueRepository.findByEstoque(idEstoque)
+        return produtosEstoque
     }
 }
