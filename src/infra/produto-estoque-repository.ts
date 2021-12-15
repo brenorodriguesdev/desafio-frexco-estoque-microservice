@@ -6,7 +6,7 @@ export class ProdutoEstoqueRepositoryTypeORM implements ProdutoEstoqueRepository
 
     async findByEstoque(idEstoque: number): Promise<ProdutoEstoque[]> {
         const produtoEstoqueRepository = getRepository(ProdutoEstoque)
-        return await produtoEstoqueRepository.find({ where: { estoque: { id: idEstoque } }, relations: ['produto'] })
+        return await produtoEstoqueRepository.find({ where: { estoque: { id: idEstoque } }, relations: ['produto', 'estoque'] })
     }
 
     async create(produtoEstoque: ProdutoEstoque): Promise<void> {
