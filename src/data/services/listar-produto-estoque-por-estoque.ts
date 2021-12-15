@@ -6,6 +6,8 @@ export class ListarProdutoEstoquePorEstoqueService implements ListarProdutoEstoq
     constructor (private readonly produtoEstoqueRepository: ProdutoEstoqueRepository) {}
     async listar (idEstoque: number): Promise<ProdutoEstoqueModel[]> {
         const produtosEstoque = await this.produtoEstoqueRepository.findByEstoque(idEstoque)
+        console.log(produtosEstoque)
+        console.log(idEstoque)
         return produtosEstoque
     }
 }
