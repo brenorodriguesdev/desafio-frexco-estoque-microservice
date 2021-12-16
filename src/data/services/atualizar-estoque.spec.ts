@@ -43,7 +43,7 @@ describe('AtualizarEstoque Service', () => {
         const { sut, estoqueRepository } = makeSut()
         jest.spyOn(estoqueRepository, 'getById').mockReturnValueOnce(null)
         const error = await sut.atualizar(makeData())
-        expect(error).toEqual(new Error('Esse produto não foi encontrado!'))
+        expect(error).toEqual(new Error('Esse estoque não foi encontrado!'))
     })
 
 
