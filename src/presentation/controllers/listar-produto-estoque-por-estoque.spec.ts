@@ -50,6 +50,27 @@ const makeSut = (): SutTypes => {
 
 describe('listarProdutoEstoquePorEstoque controller', () => {
 
+    test('Garantir que validate seja chamado com os valores corretos', async () => {
+        const { sut, validator } = makeSut()
+        const validateSpy = jest.spyOn(validator, 'validate')
+        await sut.handle({ payload: { idEstoque: 1 } })
+        expect(validateSpy).toHaveBeenCalledWith({ idEstoque: 1 })
+    })
+
+    test('Garantir que se o validate retornar uma exceção repassará essa exceção', async () => {
+        const { sut, validator } = makeSut()
+        jest.spyOn(validator, 'validate').mockImplementationOnce(() => { throw new Error() })
+        const promise = sut.handle({ payload: { idEstoque: 1 } })
+        await expect(promise).rejects.toThrow()
+    })
+
+    test('Garantir que se o validate retornar uma exceção', async () => {
+        const { sut, validator } = makeSut()
+        jest.spyOn(validator, 'validate').mockImplementationOnce(() => { return new Error() })
+        const promise = sut.handle({ payload: { idEstoque: 1 } })
+        await expect(promise).rejects.toThrow()
+    })
+
     test('Garantir que listar seja chamado com os valores corretos', async () => {
         const { sut, listarProdutoEstoquePorEstoqueUseCase } = makeSut()
         const listarSpy = jest.spyOn(listarProdutoEstoquePorEstoqueUseCase, 'listar')
